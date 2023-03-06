@@ -3,9 +3,42 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Votre Compte</title>
+	<title>Recherche</title>
 	<link rel="stylesheet" type="text/css" href="Style.css">
-	
+	<style type="text/css">
+		
+		
+
+		#search-box {
+			width: 80%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			box-sizing: border-box;
+			border: 2px solid #ccc;
+			border-radius: 4px;
+			background-color: #f8f8f8;
+			font-size: 16px;
+		}
+
+		button[type=submit] {
+			width: 20%;
+			background-color: pink;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		button[type=submit]:hover {
+			background-color: #45a049;
+		}
+
+		#search-results {
+			margin-top: 20px;
+		}
+	</style>
 </head>
 <body>
 	<div id=wrapper>
@@ -34,6 +67,40 @@
 		</div>
 		<div id= "Section">
 
+			
+			<h2 align="center">Que recherchez vous ?</h2>
+			<p>Villa ? Appartements ? etc..</p>
+			<center>
+				
+				<form action="recherche.php" method="post">
+					<input type="text" placeholder="Rechercher" name="mot" id="search-box">
+					<button type="submit" name="button1">Rechercher</button>
+				</form>
+				<div id="search-results">
+
+					<p>Voici les résultats de votre recherche</p>
+
+					<?php 
+						$tableau = $_GET['tableau'];?>
+
+						<p> 
+							<?php 
+								foreach ($tableau as $valeur)
+								{
+									printf($valeur['Nom']);
+								}
+								
+							?>
+						</p>
+						
+
+					</div>
+					
+
+					
+				</center>
+				<br>
+				<br>
 			</div>
 			<center>
 				<footer>
