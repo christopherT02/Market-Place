@@ -1,0 +1,86 @@
+
+body{
+	/*background-color: floralwhite;*/
+	/*background-image: linear-gradient(180deg,#2af598 0%,#009efd 100%);*/
+	background-image: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+
+}
+#wrapper
+{
+	background-color: antiquewhite;
+		border: solid;
+	padding-right: 30px;
+	padding-left: 30px;
+
+	padding-top: 40px;
+}
+
+header
+{
+	font-family: Calisto MT;
+	text-align: center;
+	color: #994d00;
+	font-size: 35px;
+	
+}
+#Titre_Bouton
+{
+	
+	background-color: white;
+	padding-bottom: 20px;
+	border-top: solid;
+	border-right: solid;
+	border-left: solid;
+
+		
+}
+
+#navigation
+{
+	
+padding-top: 20px;
+	/*border-color: brown;*/
+	flex-direction: center;
+	display: flex;
+	justify-content: space-around;
+	border-top: solid;
+	
+
+}
+.Bouton_de_navigation
+{  	
+	font-family: Rockwell;
+	color: #994d00;	
+	background-color: mistyrose;
+	font-size: 30px; 
+
+}
+
+#Section
+{
+	background-color: mistyrose;
+ border-top: solid;
+	border-right: solid;
+	border-left: solid;
+	padding-left: 10px;
+}
+.plus_de_choix
+{
+	font-family: Rockwell;
+	color: #994d00;	
+	background-color: whitesmoke;
+
+	font-size: 30px; 
+}
+
+footer
+{
+	background-color: pink;
+	
+	border: solid;
+	padding-top: 10px;
+	margin-bottom: 40px;
+
+	 
+}
+
