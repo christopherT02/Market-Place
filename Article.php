@@ -4,6 +4,7 @@ include "header.php";
 
 //
 $ID_r= $_GET["ID"];
+
 echo $ID_r ; 
 
 //On prends les articles 
