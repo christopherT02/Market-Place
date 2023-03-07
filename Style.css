@@ -1,36 +1,41 @@
 
 body{
-	/*background-color: floralwhite;*/
+	background-color: floralwhite;
 	/*background-image: linear-gradient(180deg,#2af598 0%,#009efd 100%);*/
-	background-image: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+	/*background-image: linear-gradient(to top, #FFE4B5 0%, #EBCC6D 100%);*/
 
+}
+
+img{
+	width: 130px;
+	height: 70px;
 }
 #wrapper
 {
-	background-color: antiquewhite;
-		border: solid;
+	/*background-image: linear-gradient(to bottom, #FFE4B5 0%, #EBCC6D 100%);*/
+	background-color: #FFE4B5;
+	border: solid;
 	padding-right: 30px;
 	padding-left: 30px;
-
 	padding-top: 40px;
 }
 
 h3{
 	color:#994d00;
-	size: 50px;
+	size: 350px;
 }
 header
 {
 	font-family: Calisto MT;
 	text-align: center;
-	color: #994d00;
+	color: white;
 	font-size: 35px;
 	
 }
 #Titre_Bouton
 {
 	
-	background-color: white;
+	background-color: black;
 	padding-bottom: 20px;
 	border-top: solid;
 	border-right: solid;
@@ -38,32 +43,37 @@ header
 
 		
 }
+center{
 
+}
 #navigation
 {
-	
-padding-top: 20px;
+	padding-top: 20px;
 	/*border-color: brown;*/
 	flex-direction: center;
 	display: flex;
 	justify-content: space-around;
 	border-top: solid;
-	
+	border-width: 1 em;
+	border-color: #CEA65F;
 
 }
 .Bouton_de_navigation
 {  	
 	font-family: Rockwell;
-	color: #994d00;	
-	background-color: mistyrose;
+	color: white;
+	border-width: 1 em;
+	border-color: white;
+	box-shadow: 5px 3px 3px lightgrey;
+	background-color: black;
 	font-size: 30px; 
 
 }
 
 #Section
 {
-	background-color: mistyrose;
- border-top: solid;
+	background-color: #FFE4B5;
+ 	border-top: solid;
 	border-right: solid;
 	border-left: solid;
 	padding-left: 10px;
@@ -71,20 +81,25 @@ padding-top: 20px;
 .plus_de_choix
 {
 	font-family: Rockwell;
-	color: #994d00;	
-	background-color: whitesmoke;
+	color: white;	
+	background-color: black;
 
 	font-size: 30px; 
 }
 
 footer
 {
-	background-color: pink;
-	
+	background-color: black;
+	color: white;
 	border: solid;
 	padding-top: 10px;
 	margin-bottom: 40px;
-
+	border-width: 1 em;
+	border-color: black;
 	 
+}
+
+a{
+		color: yellow; 
 }
 
