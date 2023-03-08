@@ -42,10 +42,38 @@ $connexion = mysqli_connect($Endroit,$Nom_utilisateur,$MDP,$Nom_base);
 
     if($erreur==""){
 
-            $sql = "INSERT INTO client (ID, Nom, Prenom,Adresse, Mail) VALUES (NULL,'$name_renseigne', '$prenom_renseigne','$adresse_renseigne','$mail_renseigne')";
 
-            mysqli_query($connexion, $sql) or die('Erreur SQL !'.$sql.'<br>'.mysqli_error($connexion));
+    $requete_sql= "SELECT * FROM compte";
+ 
+    $resultat=mysqli_query($connexion, $requete_sql);
+    $compte_existant=false;
+    while ($data = mysqli_fetch_assoc($resultat))
+      {
+            if($mail_renseigne == $data['Mail'])
+            {
+                $compte_existant=true;
+            }
+        
+      }
+
+
+    if($compte_existant)
+    {
+        header('Location: http://localhost/Market-Place/Compte.html');
+    }
+    else
+    {
+        $sql = "INSERT INTO client (ID, Nom, Prenom,Adresse, Mail) VALUES (NULL,'$name_renseigne', '$prenom_renseigne','$adresse_renseigne','$mail_renseigne')";
+
+        mysqli_query($connexion, $sql) or die('Erreur SQL !'.$sql.'<br>'.mysqli_error($connexion));
+        $sql = "INSERT INTO compte (Mail,Mot_de_Passe,Type_de_Compte) VALUES ('$mail_renseigne','$mdp_renseigne','1')";
+
+        mysqli_query($connexion, $sql) or die('Erreur SQL !'.$sql.'<br>'.mysqli_error($connexion));
+        header('Location: http://localhost/Market-Place/Accueil.html');
+
+    }
        
+
     }
     
 mysqli_close($connexion);

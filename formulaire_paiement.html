@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Paiement</title>
+</head>
+<body>
+	<h3>Paiement par carte de crédit</h3>
+	<form action="formulaire_paiement.php" method="post">
+	<table border="1">
+		<tr>
+			<td>Montant à payer</td>
+			<td><input type="number" step="0.01" name="amount"></td>
+		</tr>
+		<tr>
+			<td>A payer par</td>
+			<td>
+				<input type="radio" name="carte" value="MasterCard">MasterCard<br>
+				<input type="radio" name="carte" value="Visa">Visa<br>
+				<input type="radio" name="carte" value="AmericanExpress">American Express<br>
+				<input type="radio" name="carte" value="Paypal">Paypal<br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" name="button1" value="Soumettre">
+			</td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>
