@@ -31,7 +31,7 @@
 
 	
  <div id="Les_articles">
- 	<table cellspacing="30">
+ 	<table cellspacing="60">
  		<thead>
  		<tr>
  		
@@ -48,11 +48,14 @@
 while ($data = mysqli_fetch_assoc($resultat)) { ?>
 	<?php if($data["Rarete"]==1){?>
 		
+                <td> <img src= <?php echo $data["Image_1"] ?> alt=<?php echo $data["Image_1"] ;?>>  </td>
 
- 			<tr><th scope="row"> <a href="Article.php?ID_article=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></th>
+            <tr><th scope="row"> <a href="Article.php?ID_article=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></th>
+
 
  				<td><?php echo $data["Description"];?> </td>
- 				<td><?php echo $data["Prix"];?> </td>
+ 				<td><?php echo $data["Prix"]."€";?> </td>
+                <td><?php echo $data["Image_1"];?> </td>
  		    </tr>
  		<?php  } ?>	
  		<?php  } ?>	
@@ -61,6 +64,19 @@ while ($data = mysqli_fetch_assoc($resultat)) { ?>
  	</table>
  </div>
  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  <?php mysqli_close($connexion); 
@@ -82,7 +98,7 @@ while ($data = mysqli_fetch_assoc($resultat)) { ?>
  ?>
 
   <div id="Les_articles">
- 	<table cellspacing="30">
+ 	<table cellspacing="60">
  		<thead>
  		<tr>
  		
@@ -98,11 +114,13 @@ while ($data = mysqli_fetch_assoc($resultat)) { ?>
 <?php while ($data = mysqli_fetch_assoc($resultat)) { ?>
 	<?php if($data["Rarete"]==2){?>
 		
+            <td> <img src= <?php echo $data["Image_1"] ?> alt=<?php echo $data["Image_1"] ;?>>  </td>
 
- 			<tr><th scope="row"> <a href="Article.php?ID=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></th>
+ 			<tr><th scope="row"> <a href="Article.php?ID_article=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></th>
 
  				<td><?php echo $data["Description"];?> </td>
- 				<td><?php echo $data["Prix"];?> </td>
+ 				<td><?php echo $data["Prix"]."€";?> </td>
+                <td><?php echo $data["Image_1"];?> </td>
  		    </tr>
  		<?php  } ?>	
  		<?php  } ?>	
@@ -130,15 +148,18 @@ while ($data = mysqli_fetch_assoc($resultat)) { ?>
  ?>
 
   <div id="Les_articles">
- 	<table cellspacing="30">
+ 	<table cellspacing="60">
  		<thead>
+        <tr><th scope="row">Image</th></tr>
+
+
  		<tr>
- 		
+ 		             
+
  			<th scope="col">Nom</th>
 
  			<th scope="col">Description</th>
  			<th scope="col">Prix</th>
- 			<th scope="col">Image</th>
  		</tr>	
  		
 
@@ -146,11 +167,12 @@ while ($data = mysqli_fetch_assoc($resultat)) { ?>
 <?php while ($data = mysqli_fetch_assoc($resultat)) { ?>
 	<?php if($data["Rarete"]==3){?>
 
-
- 			<tr><th scope="row"> <a href="Article.php?ID=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></th>
+                
+            <td> <img src= <?php echo $data["Image_1"] ?> alt=<?php echo $data["Image_1"] ;?>>  </td>
+ 			<tr><th scope="row"> <a href="Article.php?ID_article=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></th>
 
  				<td><?php echo $data["Description"];?> </td>
- 				<td><?php echo $data["Prix"];?> </td>
+ 				<td><?php echo $data["Prix"]."€";?> </td>
  		    </tr>
  		<?php  } ?>	
  		<?php  } ?>	

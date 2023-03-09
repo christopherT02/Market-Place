@@ -3,9 +3,43 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Inscription client</title>
+	<title>Client formulaire</title>
 </head>
 <body>
-<h1>Client</h1>
+	<form action="remplissage_formulaire.php" method="post">
+		<table border="1">
+			<tr>
+				<td>Nom</td>
+				<td><input type="text" name="nom"></td>
+			</tr>
+			<tr>
+				<td>Prénom</td>
+				<td><input type="text" name="prenom"></td>
+			</tr>
+			<tr>
+				<td>Mail</td>
+				<td><input type="text" name="mail"></td>
+			</tr>
+			<tr>
+				<td>Mot de Passe</td>
+				<td><input type="password" name="mdp"></td>
+			</tr>
+			<tr>
+				<td>
+					<legend>Vous êtes : <br> </legend> </td>
+					<td>
+					<input type="radio" name="type_compte" value="1">Client<br>
+					<input type="radio" name="type_compte" value="2">Vendeur<br>
+					<input type="radio" name="type_compte" value="3">Administrateur<br>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit" name="submit" value="Valider">
+				</td>
+			</tr>
+		</table>
+	</form>
+
 </body>
 </html>

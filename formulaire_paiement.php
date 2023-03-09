@@ -47,7 +47,7 @@ $mail_trouve=false;
       	
       
       <br><br><br><br><br><br>
-      <form action="formulaire_paiement.php" method="post">
+      <form>
 					<table border="1">
 						<tr>
 							<td>Montant à payer</td>
