@@ -4,8 +4,8 @@
 
 
 	//$ID = isset($_POST["ID_article"])? $_POST["ID_article"]: "";
-	$ID = $_GET["ID_article"];
-
+	$ID = $_POST["ID_article"];
+	$quantite = $_POST["quantite"];
 
 	$Nom_base ="Market Place";
 	$Endroit ='localhost';
@@ -51,7 +51,9 @@
 				<table border="1">
 					<tr>
 						<td>Montant à payer</td>
-						<td> <?php echo $montant."€";  ?> </td>
+						<td> <?php 
+						$montant_final = $montant * $quantite;
+						echo $montant_final."€";  ?> </td>
 					</tr>
 					<tr>
 						<td>A payer par</td>
@@ -71,8 +73,10 @@
 								<!--<td><input type="number" name="numCard" pattern="2" maxlength="2" required autofocus></td>-->
 							</tr>
 							<tr>
-								<td>Date</td>
-								<td><input type="month" name="dateExp"></td>
+								<td>Date d'expiration (saisir jj = 01)</td>
+								<td><input type="date" id="start" name="date"
+       							value="00-00-00"
+       							min="2023-04-01" max="2050-01-01"></td>
 							</tr>
 							<tr>
 								<td>CVV</td>

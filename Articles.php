@@ -24,173 +24,167 @@
 
  $resultat=mysqli_query($connexion, $requete);
  ?>
+ <style type="text/css">
 
- <center>
- 
- <h1>Liste des articles</h1>
+   .article {
+      text-align: center;
+  }
 
-	
- <div id="Les_articles">
- 	<table cellspacing="60">
- 		<thead>
- 		<tr>
- 		
- 			<th scope="col">Nom</th>
+  .article img {
+      display: block;
+      margin: 0 auto;
+  }
 
- 			<th scope="col">Description</th>
- 			<th scope="col">Prix</th>
- 			<th scope="col">Image</th>
- 		</tr>	
- 		
+  .article h3, .article p {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0;
+      padding-left: 10px;
+  }
+</style>
 
- 	<h2>1-Articles rares</h2>
-<?php ///ARTICLES DE Rarete 2 DONC HAUTS DE GAMME 
+<center>
+
+   <h1>Liste des articles</h1>
+   <h2>1-Articles rares</h2>
+
+
+
+
+   <div id="Les_articles">
+    <table cellspacing="30">
+        <thead>
+
+<?php ///ARTICLES DE TYPE 2 DONC HAUTS DE GAMME 
 while ($data = mysqli_fetch_assoc($resultat)) { ?>
-	<?php if($data["Rarete"]==1){?>
-		
-                <td> <img src= <?php echo $data["Image_1"] ?> alt=<?php echo $data["Image_1"] ;?>>  </td>
+    <?php if($data["Rarete"]==1){?>
 
-            <tr><th scope="row"> <a href="Article.php?ID_article=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></th>
+            <td>
+                <div class="article">
+                  <img src=<?php echo $data["Image_1"] ?> alt="Nom de l'article" style="height :25%; width : 25%;">
+                  <h3><a href="Article.php?ID_article=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></h3>
+                  <p><?php echo $data["Prix"]."€";?></p>
+                  <p><?php echo $data["Description"];?></p>
 
-
- 				<td><?php echo $data["Description"];?> </td>
- 				<td><?php echo $data["Prix"]."€";?> </td>
-                <td><?php echo $data["Image_1"];?> </td>
- 		    </tr>
- 		<?php  } ?>	
- 		<?php  } ?>	
-
-    </thead>
- 	</table>
- </div>
- 
+              </div>
+          </td>
 
 
 
 
+  <?php  } ?> 
+<?php  } ?> 
+
+</thead>
+</table>
+</div>
 
 
 
-
-
-
-
-
-
-
-
- <?php mysqli_close($connexion); 
+<?php mysqli_close($connexion); 
 
  //Nouvelle collection pour la deuxième table
- ?>
+?>
 
- <?php 
+
+<?php 
  ///ARTICLES DE Rarete 2 DONC HAUTS DE GAMME 
-  $Nom_base ="Market Place";
- $Endroit ='localhost';
- $Nom_utilisateur ='root' ;
- $MDP ="";
+$Nom_base ="Market Place";
+$Endroit ='localhost';
+$Nom_utilisateur ='root' ;
+$MDP ="";
 
- $connexion = mysqli_connect($Endroit,$Nom_utilisateur,$MDP,$Nom_base);
- $trouve = mysqli_select_db($connexion,$Nom_base);
- $requete = "SELECT * FROM article ";
- $resultat=mysqli_query($connexion, $requete);
- ?>
-
-  <div id="Les_articles">
- 	<table cellspacing="60">
- 		<thead>
- 		<tr>
- 		
- 			<th scope="col">Nom</th>
-
- 			<th scope="col">Description</th>
- 			<th scope="col">Prix</th>
- 			<th scope="col">Image</th>
- 		</tr>	
- 		
-
- 	<h2>2-Articles haut de gamme</h2>
-<?php while ($data = mysqli_fetch_assoc($resultat)) { ?>
-	<?php if($data["Rarete"]==2){?>
-		
-            <td> <img src= <?php echo $data["Image_1"] ?> alt=<?php echo $data["Image_1"] ;?>>  </td>
-
- 			<tr><th scope="row"> <a href="Article.php?ID_article=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></th>
-
- 				<td><?php echo $data["Description"];?> </td>
- 				<td><?php echo $data["Prix"]."€";?> </td>
-                <td><?php echo $data["Image_1"];?> </td>
- 		    </tr>
- 		<?php  } ?>	
- 		<?php  } ?>	
-
-    </thead>
- 	</table>
- </div>
+$connexion = mysqli_connect($Endroit,$Nom_utilisateur,$MDP,$Nom_base);
+$trouve = mysqli_select_db($connexion,$Nom_base);
+$requete = "SELECT * FROM article ";
+$resultat=mysqli_query($connexion, $requete);
+?>
 
 
- 
+
+        <h2>2-Articles haut de gamme</h2><div id="Les_articles">
+    <table cellspacing="30">
+        <thead>
+            
+<?php ///ARTICLES DE TYPE 2 DONC HAUTS DE GAMME 
+while ($data = mysqli_fetch_assoc($resultat)) { ?>
+    <?php if($data["Rarete"]==2){?>
+
+        <tr>
+            <td>
+                <div class="article">
+                  <img src=<?php echo $data["Image_1"] ?> alt="Nom de l'article" style="height :25%; width : 25%;">
+                  <h3><a href="Article.php?ID_article=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></h3>
+                  <p><?php echo $data["Prix"]."€";?></p>
+                  <p><?php echo $data["Description"];?></p>
+
+              </div>
+          </td>
+      </tr>
+
+      
+
+      
+  <?php  } ?> 
+<?php  } ?> 
+
+</thead>
+</table>
+</div>
 
 
- <?php 
+
+
+
+<?php 
 
  ///ARTICLES DE Rarete 3 DONC REGULIERS 
-  $Nom_base ="Market Place";
- $Endroit ='localhost';
- $Nom_utilisateur ='root' ;
- $MDP ="";
+$Nom_base ="Market Place";
+$Endroit ='localhost';
+$Nom_utilisateur ='root' ;
+$MDP ="";
 
- $connexion = mysqli_connect($Endroit,$Nom_utilisateur,$MDP);
- $trouve = mysqli_select_db($connexion,$Nom_base);
- $requete = "SELECT * FROM article ";
- $resultat=mysqli_query($connexion, $requete);
- ?>
-
-  <div id="Les_articles">
- 	<table cellspacing="60">
- 		<thead>
-        <tr><th scope="row">Image</th></tr>
+$connexion = mysqli_connect($Endroit,$Nom_utilisateur,$MDP);
+$trouve = mysqli_select_db($connexion,$Nom_base);
+$requete = "SELECT * FROM article ";
+$resultat=mysqli_query($connexion, $requete);
+?>
 
 
- 		<tr>
- 		             
 
- 			<th scope="col">Nom</th>
+        <h2>3-Articles réguliers</h2>
+       <div id="Les_articles">
+    <table cellspacing="30">
+        <thead>
+            
+<?php ///ARTICLES DE TYPE 2 DONC HAUTS DE GAMME 
+while ($data = mysqli_fetch_assoc($resultat)) { ?>
+    <?php if($data["Rarete"]==3){?>
 
- 			<th scope="col">Description</th>
- 			<th scope="col">Prix</th>
- 		</tr>	
- 		
+        <tr>
+            <td>
+                <div class="article">
+                  <img src=<?php echo $data["Image_1"] ?> alt="Nom de l'article" style="height :25%; width : 25%;">
+                  <h3><a href="Article.php?ID_article=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></h3>
+                  <p><?php echo $data["Prix"]."€";?></p>
+                  <p><?php echo $data["Description"];?></p>
 
- 		<h2>3-Articles réguliers</h2>
-<?php while ($data = mysqli_fetch_assoc($resultat)) { ?>
-	<?php if($data["Rarete"]==3){?>
+              </div>
+          </td>
+      </tr>
+ 
+  <?php  } ?> 
+<?php  } ?> 
 
-                
-            <td> <img src= <?php echo $data["Image_1"] ?> alt=<?php echo $data["Image_1"] ;?> style = "width:100%">  </td>
- 			<tr><th scope="row"> <a href="Article.php?ID_article=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></th>
-
- 				<td><?php echo $data["Description"];?> </td>
- 				<td><?php echo $data["Prix"]."€";?> </td>
- 		    </tr>
- 		<?php  } ?>	
- 		<?php  } ?>	
-
-    </thead>
- 	</table>
- </div>
- </center>
+</thead>
+</table>
+</div>
+</center>
 
 
 
 
- <?php 
- include "moitie_bas.php";
+<?php 
+include "moitie_bas.php";
 
- ?>
-
-
-
-
-
+?>
