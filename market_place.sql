@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 09 mars 2023 à 14:50
+-- Généré le : jeu. 09 mars 2023 à 20:13
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -59,17 +59,19 @@ CREATE TABLE IF NOT EXISTS `article` (
   `Image_1` varchar(128) NOT NULL,
   `Image_2` varchar(128) NOT NULL,
   `Image_3` varchar(128) NOT NULL,
+  `Quantite` int(11) NOT NULL,
   PRIMARY KEY (`ID_article`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `article`
 --
 
-INSERT INTO `article` (`ID_article`, `Nom`, `Prix`, `Description`, `Rarete`, `Image_1`, `Image_2`, `Image_3`) VALUES
-(1, 'Air-King', 7350, 'Oyster, 40 mm, acier Oystersteel, Homme', 1, '\"Rolex/rolex_noir_homme_1.png\"', '\"Rolex/rolex_noir_homme_2.png\"', '\"Rolex/rolex_noir_homme_3.png\"'),
-(2, 'G-shock', 199, 'GA-100RGB11 : Gris, Cadran moyen, Homme', 3, '\"G-shock/g-shock_gris_homme_1.png\"', '\"G-shock/g-shock_gris_homme_2.png\"', '\"G-shock/g-shock_gris_homme_3.png\"'),
-(3, 'Le Temps Ne S\'arrete Jamais', 855, 'Acier, cadran bleu, mouvement automatique, Homme', 2, '\"Mauboussin/mauboussin_bleu_homme_1.png\"', '\"Mauboussin/mauboussin_bleu_homme_2.png\"', '\"Mauboussin/mauboussin_bleu_homme_3.png\"');
+INSERT INTO `article` (`ID_article`, `Nom`, `Prix`, `Description`, `Rarete`, `Image_1`, `Image_2`, `Image_3`, `Quantite`) VALUES
+(1, 'Air-King', 7350, 'Oyster, 40 mm, acier Oystersteel, Homme', 1, '\"Rolex/rolex_noir_homme_1.png\"', '\"Rolex/rolex_noir_homme_2.png\"', '\"Rolex/rolex_noir_homme_3.png\"', 8),
+(2, 'G-shock', 199, 'GA-100RGB11 : Gris, Cadran moyen, Homme', 3, '\"G-shock/g-shock_gris_homme_1.png\"', '\"G-shock/g-shock_gris_homme_2.png\"', '\"G-shock/g-shock_gris_homme_3.png\"', 250),
+(3, 'Le Temps Ne S\'arrete Jamais', 855, 'Acier, cadran bleu, mouvement automatique, Homme', 2, '\"Mauboussin/mauboussin_bleu_homme_1.png\"', '\"Mauboussin/mauboussin_bleu_homme_2.png\"', '\"Mauboussin/mauboussin_bleu_homme_3.png\"', 120),
+(4, 'Royal Oak Perpetual Calendar', 225416, 'Montre dotee d un boitier en acier inoxydable de 39 mm entourant un cadran squelette sur un bracelet en acier inoxydable avec boucle deployante.', 1, '\"Audemars/audemars_blanc_homme_1.png\"', '\"Audemars/audemars_blanc_homme_2.png\"', '\"Audemars/audemars_blanc_homme_3.png\"', 3);
 
 -- --------------------------------------------------------
 
@@ -140,12 +142,37 @@ CREATE TABLE IF NOT EXISTS `compte` (
 --
 
 INSERT INTO `compte` (`Mail`, `Mot_de_Passe`, `Type_de_Compte`) VALUES
-('christopher.terrier@edu.ece.fr', 'motdepasseintrouvable', 1),
-('leticia.moussaoui@edu.ece.fr', 'leticia', 3),
+('christopher.terrier@edu.ece.fr', 'christopher', 1),
+('rolex@edu.ece.fr', 'rolex', 3),
 ('ghita.ouannane@edu.ece.fr', 'ghita', 2),
 ('hina.manolo@edu.ece.fr', 'mdp', 1),
 ('arthur.fabas@edu.ece.fr', '123', 1),
-('christopher.trr@edu.ece.fr', 'arthur', 1);
+('audemars_piguet@edu.ece.fr', 'audemars', 3),
+('mauboussin@edu.ece.fr', 'mauboussin', 3),
+('g_shock@edu.ece.fr', 'g_shock', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `panier`
+--
+
+DROP TABLE IF EXISTS `panier`;
+CREATE TABLE IF NOT EXISTS `panier` (
+  `ID_numero_article` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_article` int(11) NOT NULL,
+  `Prix` float NOT NULL,
+  `Quantite` int(11) NOT NULL,
+  PRIMARY KEY (`ID_numero_article`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `panier`
+--
+
+INSERT INTO `panier` (`ID_numero_article`, `ID_article`, `Prix`, `Quantite`) VALUES
+(3, 1, 14700, 2),
+(5, 4, 450832, 2);
 
 -- --------------------------------------------------------
 
@@ -162,14 +189,17 @@ CREATE TABLE IF NOT EXISTS `vendeur` (
   `Pseudo` varchar(128) NOT NULL,
   `Image de fond` varchar(128) NOT NULL,
   PRIMARY KEY (`ID_vendeur`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `vendeur`
 --
 
 INSERT INTO `vendeur` (`ID_vendeur`, `Nom`, `Prenom`, `Mail`, `Pseudo`, `Image de fond`) VALUES
-(1, 'Moussaoui', 'Leticia', 'leticia.moussaoui@edu.ece.fr', 'Rolex', 'Logo_rolex.jpg');
+(1, 'Rolex', 'roro', 'rolex@edu.ece.fr', 'Rolex', 'Logo_rolex.png'),
+(2, 'Audemars', 'Piguet', 'audemars_piguet@edu.ece.fr', 'Audemars-Piguet', 'Logo_audemars.png'),
+(3, 'Mauboussin', 'Maubou', 'mauboussin@edu.ece.fr', 'Mauboussin', 'Logo_mauboussin.png'),
+(4, 'G-shock', 'G', 'g_shock@edu.ece.fr', 'G-shock', 'Logo_g_shock.png');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
