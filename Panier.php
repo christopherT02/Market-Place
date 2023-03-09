@@ -31,7 +31,7 @@
 					<p>Total après réduction pour Manolo : GRATUITTT </p>
 				</form>
 
-				<a href="Payer.html"><button type="button" class="plus_de_choix" >Payer</button></a>
+				<a href="formulaire_paiement.php"><button type="button" class="plus_de_choix" >Payer</button></a>
 			</center>
 			<br>
 			<br>

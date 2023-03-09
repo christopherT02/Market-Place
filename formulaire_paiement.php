@@ -4,8 +4,7 @@
 
 
 	//$ID = isset($_POST["ID_article"])? $_POST["ID_article"]: "";
-	$ID = $_POST["ID_article"];
-	$quantite = $_POST["quantite"];
+	$montant_final=0;
 
 	$Nom_base ="Market Place";
 	$Endroit ='localhost';
@@ -28,18 +27,15 @@
 	// si le bouton Rechercher est cliqué
 	if ($trouve) {
 
-		$SQL= "SELECT * FROM article";
+		$SQL= "SELECT * FROM panier";
 
 		$resultat=mysqli_query($connexion, $SQL);
 
 		while ($data = mysqli_fetch_assoc($resultat))
 
 		{
-			if($ID == $data["ID_article"])
-			{
-				$montant = $data["Prix"];
-			}
 
+				$montant_final = $montant_final + $data["Prix_panier"];
 		}
 		?>
 
@@ -47,16 +43,15 @@
 
 
 			<br><br><br><br><br><br>
-			<form>
+			<form action="transaction_paiement_immediat.php" method="post">
 				<table border="1">
 					<tr>
 						<td>Montant à payer</td>
 						<td> <?php 
-						$montant_final = $montant * $quantite;
 						echo $montant_final."€";  ?> </td>
 					</tr>
 					<tr>
-						<td>A payer par</td>
+						<td>Carte acceptée  <br> <img src="mastercard.png" alt="MasterCard" style="height :20%; width : 20%;"> <img src="visa.png" alt="Visa" style="height :20%; width : 20%;"> <img src="american_express.png" alt="AmericanExpress" style="height :20%; width : 20%;"></td>
 						<td>
 							<input type="radio" name="type_carte" value="MasterCard">MasterCard<br>
 							<input type="radio" name="type_carte" value="Visa">Visa<br>
@@ -102,8 +97,6 @@
 			<?php
 
 
-			//Si une carte de credit est selectionnée
-			$card= isset($_POST["carte"])? $_POST["carte"] : "";
 
 			//Affichage
 		}

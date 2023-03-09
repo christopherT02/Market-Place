@@ -19,7 +19,7 @@
 					<div id="navigation">
 
 						<a href="Accueil.php"><button type="button" class="Bouton_de_navigation" >Accueil</button></a>
-						<a href="Tout Parcourir.php"><button type="button" class="Bouton_de_navigation" >Tout Parcourir</button></a>
+						<a href="Articles.php"><button type="button" class="Bouton_de_navigation" >Tout Parcourir</button></a>
 						<a href="Notification.php"><button type="button" class="Bouton_de_navigation" >Notifications</button></a>
 						<a href="Panier.php"><button type="button" class="Bouton_de_navigation">Panier</button></a>
 						<a href="Espace_personnel.php"><button type="button" class="Bouton_de_navigation" >Espace personnel</button></a>

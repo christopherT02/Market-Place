@@ -13,7 +13,7 @@
 				<br>
 				<br>
                
-				<a href="Tout Parcourir.html"><button type="button" class="plus_de_choix" >Plus de choix</button></a>
+				<a href="Articles.php"><button type="button" class="plus_de_choix" >Plus de choix</button></a>
 			</center>
 
 		<br>
