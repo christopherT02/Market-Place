@@ -1,5 +1,7 @@
-<?php
+<?php 
+	echo '<link rel="stylesheet" type="text/css" href="Style_carrousel.css">';
 	include "header.php"
+	
 ?>
 
 	<div id= "Section">
@@ -13,42 +15,44 @@
 				<div class="carousel_wrapper">
   <div class="carousel">
     <div class="slide one">
-      <a href="Tout Parcourir.html"><img src="marrakech.jpg" /></a>
+      <a href="Articles.php"><img src="Rolex/rolex_noir_homme_1.png" /></a>
     </div>
     <div class="slide two">
-     <a href="Tout Parcourir.html"><img src="marrakech.jpg" /></a>
+     <a href="Articles.php"><img src="Rolex/rolex_noir_homme_2.png" /></a>
     </div>
     <div class="slide three">
-      <a href="Tout Parcourir.html"><img src="marrakech.jpg" /></a>
+      <a href="Articles.php"><img src="Rolex/rolex_noir_homme_3.png" /></a>
     </div>
     <div class="slide four">
-      <a href="Tout Parcourir.html"><img src="marrakech.jpg" /></a>
+      <a href="Articles.php"><img src="G-shock/g-shock_gris_homme_1.png" /></a>
     </div>
     <div class="slide five">
-      <a href="Tout Parcourir.html"><img src="marrakech.jpg" /></a>
+      <a href="Articles.php"><img src="G-shock/g-shock_gris_homme_2.png" /></a>
     </div>
     <div class="slide six">
-      <a href="Tout Parcourir.html"><img src="marrakech.jpg" /></a>
+      <a href="Articles.php"><img src="G-shock/g-shock_gris_homme_3.png" /></a>
     </div>
     <div class="slide seven">
-      <a href="Tout Parcourir.html"><img src="marrakech.jpg" /></a>
+      <a href="Articles.php"><img src="Audemars/audemars_blanc_homme_1.png" /></a>
     </div>
     <div class="slide eight">
-      <a href="Tout Parcourir.html"><img src="marrakech.jpg" /></a>
+      <a href="Articles.php"><img src="Audemars/audemars_blanc_homme_2.png" /></a>
     </div>
     <div class="slide nine">
-     <a href="Tout Parcourir.html"><img src="marrakech.jpg" /></a>
+     <a href="Articles.php"><img src="Audemars/audemars_blanc_homme_3.png" /></a>
     </div>
   </div>
 </div>
 <br>
 		<br>
                
-			<a href="Tout Parcourir.html"><button type="button" class="plus_de_choix" >Plus de choix</button></a>
+			<a href="Articles.php"><button type="button" class="plus_de_choix" >Plus de choix</button></a>
 			</center>
 
 		<br>
 		<br>
+
+
 <?php
 include "moitie_bas.php"
 ?>
