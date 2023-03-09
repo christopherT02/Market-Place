@@ -168,7 +168,7 @@ while ($data = mysqli_fetch_assoc($resultat)) { ?>
 	<?php if($data["Rarete"]==3){?>
 
                 
-            <td> <img src= <?php echo $data["Image_1"] ?> alt=<?php echo $data["Image_1"] ;?>>  </td>
+            <td> <img src= <?php echo $data["Image_1"] ?> alt=<?php echo $data["Image_1"] ;?> style = "width:100%">  </td>
  			<tr><th scope="row"> <a href="Article.php?ID_article=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></th>
 
  				<td><?php echo $data["Description"];?> </td>

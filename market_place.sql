@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 09 mars 2023 à 10:00
+-- Généré le : jeu. 09 mars 2023 à 14:50
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -55,9 +55,21 @@ CREATE TABLE IF NOT EXISTS `article` (
   `Nom` varchar(128) NOT NULL,
   `Prix` float NOT NULL,
   `Description` varchar(1000) NOT NULL,
-  `Rarete` varchar(128) NOT NULL,
+  `Rarete` int(11) NOT NULL,
+  `Image_1` varchar(128) NOT NULL,
+  `Image_2` varchar(128) NOT NULL,
+  `Image_3` varchar(128) NOT NULL,
   PRIMARY KEY (`ID_article`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `article`
+--
+
+INSERT INTO `article` (`ID_article`, `Nom`, `Prix`, `Description`, `Rarete`, `Image_1`, `Image_2`, `Image_3`) VALUES
+(1, 'Air-King', 7350, 'Oyster, 40 mm, acier Oystersteel, Homme', 1, '\"Rolex/rolex_noir_homme_1.png\"', '\"Rolex/rolex_noir_homme_2.png\"', '\"Rolex/rolex_noir_homme_3.png\"'),
+(2, 'G-shock', 199, 'GA-100RGB11 : Gris, Cadran moyen, Homme', 3, '\"G-shock/g-shock_gris_homme_1.png\"', '\"G-shock/g-shock_gris_homme_2.png\"', '\"G-shock/g-shock_gris_homme_3.png\"'),
+(3, 'Le Temps Ne S\'arrete Jamais', 855, 'Acier, cadran bleu, mouvement automatique, Homme', 2, '\"Mauboussin/mauboussin_bleu_homme_1.png\"', '\"Mauboussin/mauboussin_bleu_homme_2.png\"', '\"Mauboussin/mauboussin_bleu_homme_3.png\"');
 
 -- --------------------------------------------------------
 
@@ -97,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `Adresse` varchar(128) NOT NULL,
   `Mail` varchar(128) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `client`
@@ -105,6 +117,7 @@ CREATE TABLE IF NOT EXISTS `client` (
 
 INSERT INTO `client` (`ID`, `Nom`, `Prenom`, `Adresse`, `Mail`) VALUES
 (1, 'Terrier', 'Christopher', '3 rue beaugrenelle Paris', 'christopher.terrier@edu.ece.fr'),
+(14, 'Fabas', 'Arthur', '9 rue beaugrenelle Paris', 'christopher.trr@edu.ece.fr'),
 (13, 'Fabas', 'Arthur', '9 rue beaugrenelle Paris', 'arthur.fabas@edu.ece.fr'),
 (12, 'Manolo', 'Hina', '10 rue beaugrenelle 75015', 'hina.manolo@edu.ece.fr');
 
@@ -131,7 +144,8 @@ INSERT INTO `compte` (`Mail`, `Mot_de_Passe`, `Type_de_Compte`) VALUES
 ('leticia.moussaoui@edu.ece.fr', 'leticia', 3),
 ('ghita.ouannane@edu.ece.fr', 'ghita', 2),
 ('hina.manolo@edu.ece.fr', 'mdp', 1),
-('arthur.fabas@edu.ece.fr', '123', 1);
+('arthur.fabas@edu.ece.fr', '123', 1),
+('christopher.trr@edu.ece.fr', 'arthur', 1);
 
 -- --------------------------------------------------------
 
@@ -144,6 +158,7 @@ CREATE TABLE IF NOT EXISTS `vendeur` (
   `ID_vendeur` int(11) NOT NULL AUTO_INCREMENT,
   `Nom` varchar(128) NOT NULL,
   `Prenom` varchar(128) NOT NULL,
+  `Mail` varchar(128) NOT NULL,
   `Pseudo` varchar(128) NOT NULL,
   `Image de fond` varchar(128) NOT NULL,
   PRIMARY KEY (`ID_vendeur`)
@@ -153,8 +168,8 @@ CREATE TABLE IF NOT EXISTS `vendeur` (
 -- Déchargement des données de la table `vendeur`
 --
 
-INSERT INTO `vendeur` (`ID_vendeur`, `Nom`, `Prenom`, `Pseudo`, `Image de fond`) VALUES
-(1, 'Moussaoui', 'Leticia', 'Apple', 'Logo_apple.jpg');
+INSERT INTO `vendeur` (`ID_vendeur`, `Nom`, `Prenom`, `Mail`, `Pseudo`, `Image de fond`) VALUES
+(1, 'Moussaoui', 'Leticia', 'leticia.moussaoui@edu.ece.fr', 'Rolex', 'Logo_rolex.jpg');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
