@@ -30,6 +30,6 @@
 	</div>
 		<div id= "Section">
 			
-			<center>
+			
 
 		

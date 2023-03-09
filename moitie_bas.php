@@ -1,5 +1,5 @@
 		
-				</center>
+				
 			</div>
 			<center>
 				<footer>

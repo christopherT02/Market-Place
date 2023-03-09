@@ -5,78 +5,8 @@ include "header.php";
 //
 $ID_r= $_GET["ID"];
 
-echo $ID_r ; 
-
 //On prends les articles 
 //du coup on se connecte
-
-$Nom_base ="basetest";
-$Endroit ='localhost';
-$Nom_utilisateur ='root' ;
-$MDP ="";
-
-//  Connexion
-
-$connexion = mysqli_connect($Endroit,$Nom_utilisateur,$MDP);
-// On recherche le nom de la base
-
-$trouve = mysqli_select_db($connexion,$Nom_base);
-
-//on écrit ce qu'on veut faire 
-
-$requete = "SELECT * FROM article WHERE ID_r ='1'" ; 
-//on exécute la requête
-
-$resultat=mysqli_query($connexion, $requete);
-
-$article = mysqli_fetch_assoc($resultat);
-
-//ICI C'EST UN ARTICLE A LA FOIS
-
-//on vérifie si article est vide 
-
-if(!$article)
-{
-	//pas d'article
-	http_response_code(404);
-	
-	exit ; 
-}
-$titre = $article["Nom"];
-
-echo "ICI FIN DU PREMIER PHP";
-
-
-?>
-
-<h1>Liste des articles</h1>
-
-
-	<article>
-
-		<h1> <?php echo $article["Nom"];  ?> </h1>
-		
-		<div><?php echo $article["Description"];  ?></div>
-		
-	</article>
-
-
-<?php 
-include "moitie_bas.php";
-
- ?>
-
-
-
-
-
-
-<?php
-include "header.php";
-
-// On récupère l'ID de l'article à afficher
-$ID_r = mysqli_real_escape_string($connexion, $_GET["ID"]);
-
 // On se connecte à la base de données
 $Nom_base = "basetest";
 $Endroit = 'localhost';
@@ -90,35 +20,42 @@ if (!$connexion) {
     die("Connexion échouée: " . mysqli_connect_error());
 }
 
-// On écrit la requête SQL pour récupérer l'article correspondant
-$requete = "SELECT * FROM article WHERE ID_r ='$ID_r'";
+// On recherche le nom de la base
 
-// On exécute la requête et on récupère l'article
-$resultat = mysqli_query($connexion, $requete);
-$article = mysqli_fetch_assoc($resultat);
+$trouve = mysqli_select_db($connexion,$Nom_base);
 
-// On vérifie si l'article a été trouvé
-if (!$article) {
-    // Pas d'article trouvé, on renvoie une erreur 404
-    http_response_code(404);
-    exit;
-}
+//on écrit ce qu'on veut faire 
 
-$titre = $article["Nom"];
+$requete = "SELECT * FROM article  " ; 
+//on exécute la requête
 
-// On affiche le titre de la page et l'article
+$resultat=mysqli_query($connexion, $requete);
+
+
+
+ 
+
 ?>
 
-<h1><?php echo $titre; ?></h1>
+<h1>Article</h1>
+<?php while ($article = mysqli_fetch_assoc($resultat)) { ?>
 
-<article>
-    <h1><?php echo $article["Nom"]; ?></h1>
-    <div><?php echo $article["Description"]; ?></div>
-</article>
+<?php if($article["ID"]==$ID_r){?>
+	<article>
 
-<?php
+		<h1> <?php echo $article["Nom"];  ?> </h1>
+		
+		<div><?php echo $article["Description"];  ?></div>
+		
+	</article>
+	<br>
+<?php } ?>
+<?php } ?>
+<?php mysqli_close($connexion); ?>
+
+<?php 
 include "moitie_bas.php";
 
-// On ferme la connexion à la base de données
-mysqli_close($connexion);
-?>
+ ?>
+
+
