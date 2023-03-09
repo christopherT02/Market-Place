@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 08 mars 2023 à 14:10
+-- Généré le : jeu. 09 mars 2023 à 10:00
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -46,6 +46,22 @@ INSERT INTO `administrateur` (`ID_admin`, `Nom`, `Prenom`, `Mail`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `article`
+--
+
+DROP TABLE IF EXISTS `article`;
+CREATE TABLE IF NOT EXISTS `article` (
+  `ID_article` int(11) NOT NULL AUTO_INCREMENT,
+  `Nom` varchar(128) NOT NULL,
+  `Prix` float NOT NULL,
+  `Description` varchar(1000) NOT NULL,
+  `Rarete` varchar(128) NOT NULL,
+  PRIMARY KEY (`ID_article`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `banque`
 --
 
@@ -81,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `Adresse` varchar(128) NOT NULL,
   `Mail` varchar(128) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `client`
@@ -89,6 +105,7 @@ CREATE TABLE IF NOT EXISTS `client` (
 
 INSERT INTO `client` (`ID`, `Nom`, `Prenom`, `Adresse`, `Mail`) VALUES
 (1, 'Terrier', 'Christopher', '3 rue beaugrenelle Paris', 'christopher.terrier@edu.ece.fr'),
+(13, 'Fabas', 'Arthur', '9 rue beaugrenelle Paris', 'arthur.fabas@edu.ece.fr'),
 (12, 'Manolo', 'Hina', '10 rue beaugrenelle 75015', 'hina.manolo@edu.ece.fr');
 
 -- --------------------------------------------------------
@@ -113,7 +130,8 @@ INSERT INTO `compte` (`Mail`, `Mot_de_Passe`, `Type_de_Compte`) VALUES
 ('christopher.terrier@edu.ece.fr', 'motdepasseintrouvable', 1),
 ('leticia.moussaoui@edu.ece.fr', 'leticia', 3),
 ('ghita.ouannane@edu.ece.fr', 'ghita', 2),
-('hina.manolo@edu.ece.fr', 'mdp', 1);
+('hina.manolo@edu.ece.fr', 'mdp', 1),
+('arthur.fabas@edu.ece.fr', '123', 1);
 
 -- --------------------------------------------------------
 

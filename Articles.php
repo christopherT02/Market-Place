@@ -3,7 +3,7 @@
 //On prends les articles 
 //du coup on se connecte
 
- $Nom_base ="basetest";
+ $Nom_base ="Market Place";
  $Endroit ='localhost';
  $Nom_utilisateur ='root' ;
  $MDP ="";
@@ -44,12 +44,12 @@
  		
 
  	<h2>1-Articles rares</h2>
-<?php ///ARTICLES DE TYPE 2 DONC HAUTS DE GAMME 
+<?php ///ARTICLES DE Rarete 2 DONC HAUTS DE GAMME 
 while ($data = mysqli_fetch_assoc($resultat)) { ?>
-	<?php if($data["Type"]==1){?>
+	<?php if($data["Rarete"]==1){?>
 		
 
- 			<tr><th scope="row"> <a href="Article.php?ID=<?php echo $data["ID"];?>"><?php echo $data["Nom"];?> </a></th>
+ 			<tr><th scope="row"> <a href="Article.php?ID_article=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></th>
 
  				<td><?php echo $data["Description"];?> </td>
  				<td><?php echo $data["Prix"];?> </td>
@@ -69,13 +69,13 @@ while ($data = mysqli_fetch_assoc($resultat)) { ?>
  ?>
 
  <?php 
- ///ARTICLES DE TYPE 2 DONC HAUTS DE GAMME 
-  $Nom_base ="basetest";
+ ///ARTICLES DE Rarete 2 DONC HAUTS DE GAMME 
+  $Nom_base ="Market Place";
  $Endroit ='localhost';
  $Nom_utilisateur ='root' ;
  $MDP ="";
 
- $connexion = mysqli_connect($Endroit,$Nom_utilisateur,$MDP);
+ $connexion = mysqli_connect($Endroit,$Nom_utilisateur,$MDP,$Nom_base);
  $trouve = mysqli_select_db($connexion,$Nom_base);
  $requete = "SELECT * FROM article ";
  $resultat=mysqli_query($connexion, $requete);
@@ -96,10 +96,10 @@ while ($data = mysqli_fetch_assoc($resultat)) { ?>
 
  	<h2>2-Articles haut de gamme</h2>
 <?php while ($data = mysqli_fetch_assoc($resultat)) { ?>
-	<?php if($data["Type"]==2){?>
+	<?php if($data["Rarete"]==2){?>
 		
 
- 			<tr><th scope="row"> <a href="Article.php?ID=<?php echo $data["ID"];?>"><?php echo $data["Nom"];?> </a></th>
+ 			<tr><th scope="row"> <a href="Article.php?ID=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></th>
 
  				<td><?php echo $data["Description"];?> </td>
  				<td><?php echo $data["Prix"];?> </td>
@@ -117,8 +117,8 @@ while ($data = mysqli_fetch_assoc($resultat)) { ?>
 
  <?php 
 
- ///ARTICLES DE TYPE 3 DONC REGULIERS 
-  $Nom_base ="basetest";
+ ///ARTICLES DE Rarete 3 DONC REGULIERS 
+  $Nom_base ="Market Place";
  $Endroit ='localhost';
  $Nom_utilisateur ='root' ;
  $MDP ="";
@@ -144,10 +144,10 @@ while ($data = mysqli_fetch_assoc($resultat)) { ?>
 
  		<h2>3-Articles réguliers</h2>
 <?php while ($data = mysqli_fetch_assoc($resultat)) { ?>
-	<?php if($data["Type"]==3){?>
+	<?php if($data["Rarete"]==3){?>
 
 
- 			<tr><th scope="row"> <a href="Article.php?ID=<?php echo $data["ID"];?>"><?php echo $data["Nom"];?> </a></th>
+ 			<tr><th scope="row"> <a href="Article.php?ID=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></th>
 
  				<td><?php echo $data["Description"];?> </td>
  				<td><?php echo $data["Prix"];?> </td>
