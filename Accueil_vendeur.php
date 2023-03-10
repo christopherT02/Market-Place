@@ -16,6 +16,10 @@
 				<br>
 				<br>
                
+<<<<<<< HEAD
+=======
+				<a href="Articles.php"><button type="button" class="plus_de_choix" >Plus de choix</button></a>
+>>>>>>> 4f1be4dc945b1caef99677375e5f1129976c33a4
 			</center>
 
 		<br>
