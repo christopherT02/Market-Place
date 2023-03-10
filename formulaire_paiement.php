@@ -2,7 +2,7 @@
 
 	include "header.php";
 
-
+    $total=$_GET['total'];
 	//$ID = isset($_POST["ID_article"])? $_POST["ID_article"]: "";
 	$montant_final=0;
 
@@ -48,7 +48,7 @@
 					<tr>
 						<td>Montant à payer</td>
 						<td> <?php 
-						echo $montant_final."€";  ?> </td>
+						echo $total."€";  ?> </td>
 					</tr>
 					<tr>
 						<td>Carte acceptée  <br> <img src="mastercard.png" alt="MasterCard" style="height :20%; width : 20%;"> <img src="visa.png" alt="Visa" style="height :20%; width : 20%;"> <img src="american_express.png" alt="AmericanExpress" style="height :20%; width : 20%;"></td>

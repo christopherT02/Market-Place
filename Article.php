@@ -83,7 +83,8 @@ $resultat=mysqli_query($connexion, $requete);
 
 			<form action="remplissage_panier.php" method="post" class="dg-addToCartFormGrid" >  
 				<div style="min-height:50px;">
-					<select style="margin-bottom:10px;font-size:12px;width:100%;max-width:100%;{% unless product.variants.size > 1 %}display:none;{% endunless %}" name="quantite" id="productSelect-{{ section.id }}" class="product-variants product-variants-{{ section.id }}">
+					<select style="margin-bottom:10px;font-size:12px;width:100%;max-width:100%;
+					{% unless product.variants.size > 1 %}display:none;{% endunless %}" name="quantite" id="productSelect-{{ section.id }}" class="product-variants product-variants-{{ section.id }}">
 						{{ product.variants.size }}
 						{% for variant in product.variants %}
 						{% if variant.available %}

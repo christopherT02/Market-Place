@@ -1,5 +1,6 @@
  <?php 
  include "header.php";
+ include "Calcul_total.php"
 //On prends les articles 
 //du coup on se connecte
 
