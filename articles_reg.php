@@ -9,7 +9,7 @@
 	<center>
 		<table cellspacing="30" >
 			<tr>
-				<td align="center"><a href="Tout Parcourir.php">Image_maison</a></td>
+				<td align="center"><a href="Articles.php">Image_maison</a></td>
 				<td align="center"> <a href="#">Image_maison</a></td>
 				<td align="center"> <a href="#">Image_maison</a></td>
 				<td align="center"> <a href="#">Image_maison</a></td>
