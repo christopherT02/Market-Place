@@ -4,16 +4,18 @@
 	<div id= "Section">
 		
 			
-			<h2 align="center">Introduction</h2>
-			<p>Aujourd'hui l'evenement de la semaine blablabla</p>
-			<p>BIG NEWS PORTE OUVERTE ENTREE GRATUITE VENEZ VOIR NOTRE SHOW ROOM  MAISON TEMOINS</p>
+			<h2 align="center">Bienvenue sur votre espace vendeur !</h2>
+			<p>Ici, Vous pouvez :</p>
+			<p>Consulter la listes des articles.</p>
+			<p>Ajouter des articles.</p>
+			<p>Supprimer des articles.</p>
+			<p>Ajouter des Vendeurs.</p>
 			<center>
 				
 				
 				<br>
 				<br>
                
-				<a href="Tout Parcourir.html"><button type="button" class="plus_de_choix" >Plus de choix</button></a>
 			</center>
 
 		<br>
