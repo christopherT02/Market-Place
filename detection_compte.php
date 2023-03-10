@@ -46,20 +46,20 @@ echo "mdp recup : ".$mdp_recherche . " et mail recup ".$mail_recherche;
       {
       	if($type_de_compte=='1') //client
       	{
-      		header('Location: http://localhost/Market-Place/Accueil.html');
+      		header('Location: http://localhost/Market-Place/Accueil.php');
       	}
       	elseif($type_de_compte=='2') //admin
       	{
-      		header('Location: http://localhost/Market-Place/Accueil.html');
+      		header('Location: http://localhost/Market-Place/Accueil.php');
       	}
       	else
       	{
-      		header('Location: http://localhost/Market-Place/Accueil.html');
+      		header('Location: http://localhost/Market-Place/Accueil.php');
       	}
       }
       else
       {
-		header('Location: http://localhost/Market-Place/Compte.html');
+		header('Location: http://localhost/Market-Place/Compte.php');
       }
       
 

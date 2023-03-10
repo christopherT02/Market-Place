@@ -74,15 +74,16 @@
        							min="2023-04-01" max="2050-01-01"></td>
 							</tr>
 							<tr>
-								<td>CVV</td>
-								<td><input type="text" name="cvv" maxlength="3" pattern="[0-9]{3}" placeholder="code à 3 chiffres" required></td>
+								<td>CCV</td>
+								<td><input type="text" name="ccv" maxlength="3" pattern="[0-9]{3}" placeholder="code à 3 chiffres" required></td>
 							</tr>
 							<tr>
 								<td colspan="2" align="center">
 									<input type="submit" name="button1" value="Soumettre">
 								</td>
 							</tr>
-
+							<input type="hidden" name="montant_a_payer" value="<?php echo $montant_final; ?>">
+							
 
 					</table>
 				</form>

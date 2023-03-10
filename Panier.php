@@ -12,7 +12,6 @@ include "header.php";
     <table cellspacing="30">
        
         	<tr>
-        		<th scope="col">ID</th>
         		<th scope="col">Image</th>
         		<th scope="col">Nom</th>
         		<th scope="col">Prix</th>
@@ -41,7 +40,6 @@ while ($data = mysqli_fetch_assoc($resultat)) { ?>
 
         <tr align="center">
             
-              <td> <?php echo $data["ID_article"]?></td>
                 <td>  <img src=<?php echo $data["Image_1"] ?> alt="Nom de l'article" style="height :50%; width : 50%;"></td> 
                  <td> <h3><a href="Article.php?ID_article=<?php echo $data["ID_article"];?>"><?php echo $data["Nom"];?> </a></h3></td> 
                  <td> <p><?php echo $data["Prix_panier"]."€";?></p></td> 
@@ -57,6 +55,8 @@ while ($data = mysqli_fetch_assoc($resultat)) { ?>
       </tr>
 <?php  } ?> 
     
+    			<tr>	<a href="formulaire_paiement.php"><button type="button" class="plus_de_choix" >Payer</button></a></tr>
+
  </table>
  </center>
     
