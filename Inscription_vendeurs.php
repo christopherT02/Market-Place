@@ -17,17 +17,30 @@
 				<td>Prénom</td>
 				<td><input type="text" name="prenom"></td>
 			</tr>
+
+			<tr>
+				<td>Numéro</td>
+				<td><input type="number" name="numero"></td>
+			</tr>
+
 			<tr>
 				<td>Mail</td>
 				<td><input type="text" name="mail"></td>
 			</tr>
-			<tr>
-				<td>Adresse</td>
-				<td><input type="text" name="adresse"></td>
-			</tr>
+			
 			<tr>
 				<td>Mot de Passe</td>
 				<td><input type="password" name="mdp"></td>
+			</tr>
+
+			<tr>
+				<td>Marque représenté</td>
+				<td><input type="text" name="marque"></td>
+			</tr>
+
+			<tr>
+				<td>Adresse du siège social</td>
+				<td><input type="text" name="adresse"></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">

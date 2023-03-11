@@ -9,7 +9,7 @@
 	<center>
 		<table cellspacing="30" >
 			<tr>
-				<td align="center"><a href="Tout Parcourir.html">Image_maison</a></td>
+				<td align="center"><a href="Tout Parcourir.php">Image_maison</a></td>
 				<td align="center"> <a href="#">Image_maison</a></td>
 				<td align="center"> <a href="#">Image_maison</a></td>
 				<td align="center"> <a href="#">Image_maison</a></td>
@@ -29,7 +29,7 @@
 
 
 		</table>
-			<a href="articles_rares.html"><button type="button" class="plus_de_choix" >Voir Plus</button></a>
+			<a href="articles_rares.php"><button type="button" class="plus_de_choix" >Voir Plus</button></a>
 
 	</center>
 
@@ -37,7 +37,7 @@
 	<center>
 		<table cellspacing="30" >
 			<tr>
-				<td align="center"><a href="Tout Parcourir.html">Image article</a></td>
+				<td align="center"><a href="Tout Parcourir.php">Image article</a></td>
 				<td align="center"> <a href="#">Image article</a></td>
 				<td align="center"> <a href="#">Image article</a></td>
 				<td align="center"> <a href="#">Image article</a></td>
@@ -55,7 +55,7 @@
 
 			</tr>
 		</table>
-		<a href="articles_hdg.html"><button type="button" class="plus_de_choix" >Voir Plus</button></a>
+		<a href="articles_hdg.php"><button type="button" class="plus_de_choix" >Voir Plus</button></a>
 	</center>
 	
 
@@ -64,7 +64,7 @@
 	<center>
 		<table cellspacing="30" >
 			<tr>
-				<td align="center"><a href="Tout Parcourir.html">Image article</a></td>
+				<td align="center"><a href="Tout Parcourir.php">Image article</a></td>
 				<td align="center"> <a href="#">Image article</a></td>
 				<td align="center"> <a href="#">Image article</a></td>
 				<td align="center"> <a href="#">Image article</a></td>
@@ -82,7 +82,7 @@
 
 			</tr>
 		</table>
-		<a href="articles_reg.html"><button type="button" class="plus_de_choix" >Voir Plus</button></a>
+		<a href="articles_reg.php"><button type="button" class="plus_de_choix" >Voir Plus</button></a>
 	</center>
 	<br>
 

@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 
 $numero_carte=$_POST['numCard'];
 $nom_proprietaire=$_POST['nomCard'];
@@ -68,7 +68,7 @@ if($tout_bon == true) //achat peut etre effectué
 }
 else //pas de montre pour bibi
 {
-	header('Location: http://localhost/Market-Place/formulaire_paiement.php');
+	header('Location: http://localhost/Market-Place/formulaire_paiement.php?total='.$montant_a_payer);
 }
 
 
