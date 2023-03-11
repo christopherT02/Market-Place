@@ -78,6 +78,12 @@ center{
 	border-left: solid;
 	padding-left: 10px;
 }
+
+#Entete
+{
+	font-size: 30px;
+	background-color: white;
+}
 .plus_de_choix
 {
 	font-family: Rockwell;

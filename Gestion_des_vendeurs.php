@@ -1,5 +1,5 @@
 <?php
-	include "header_vendeur.php"
+	include "header_admin.php"
 ?>
 	<div id= "Section">
 		
@@ -9,12 +9,14 @@
 			<table border="2">
 				<div id= "Entete">
 				<tr>
-					<td>Logo de la marque</td>
+					<td>Logo de la marque </td>
 					<td>ID_vendeur</td>
 					<td>Nom</td>
-					<td>Prenom </td>
+					<td>Prenom</td>
 					<td>Mail</td>
 					<td>Pseudo</td>
+					<td>Option 1</td>
+					<td>Option 2</td>
         		</tr>
         		</div>
 			
@@ -32,12 +34,13 @@
 			while ($data=mysqli_fetch_assoc($resultat)) {
 				echo "<tr>";?>
 				<td><img src=<?php echo $data['Image de fond']?>> </td>
-				<?php 
+			<?php
 				echo "<td>".$data['ID_vendeur']."</td>";
 				echo "<td>".$data['Nom']."</td>";
 				echo "<td>".$data['Prenom']."</td>";
 				echo "<td>".$data['Mail']."</td>";
 				echo "<td>".$data['Pseudo']."</td>";
+				echo "<br>";
 				echo "</tr>";
 			}
 			?>
