@@ -1,13 +1,13 @@
-				<?php 
+                <?php 
 
-	$ID = $_POST["ID_article"];
-	$quantite = $_POST["quantite"];
+    $ID = $_POST["ID_article"];
+    $quantite = $_POST["quantite"];
 
 
-	$Nom_base ="Market Place";
-	$Endroit ='localhost';
-	$Nom_utilisateur ='root' ;
-	$MDP ="";
+    $Nom_base ="Market Place";
+    $Endroit ='localhost';
+    $Nom_utilisateur ='root' ;
+    $MDP ="";
 
 
 $connexion = mysqli_connect($Endroit,$Nom_utilisateur,$MDP,$Nom_base);
@@ -35,7 +35,7 @@ $connexion = mysqli_connect($Endroit,$Nom_utilisateur,$MDP,$Nom_base);
 
     $requete_sql_2= "SELECT * FROM panier";
  
- 	$type_article_deja_ajoute = false;
+    $type_article_deja_ajoute = false;
     $resultat2=mysqli_query($connexion, $requete_sql_2);
     while ($data = mysqli_fetch_assoc($resultat2))
       {
@@ -52,15 +52,15 @@ $connexion = mysqli_connect($Endroit,$Nom_utilisateur,$MDP,$Nom_base);
 
 if($type_article_deja_ajoute == true)
 {
-	$sql = "UPDATE panier SET prix_panier = $prix_panier+($quantite * $prix), Quantite_panier = $quantite_panier+$quantite WHERE panier.ID_numero_article = $ID_panier";
-	mysqli_query($connexion, $sql) or die('Erreur SQL !'.$sql.'<br>'.mysqli_error($connexion));
+    $sql = "UPDATE panier SET prix_panier = $prix_panier+($quantite * $prix), Quantite_panier = $quantite_panier+$quantite WHERE panier.ID_numero_article = $ID_panier";
+    mysqli_query($connexion, $sql) or die('Erreur SQL !'.$sql.'<br>'.mysqli_error($connexion));
 }
 
         
 else
 {
-	$prix_final=$prix*$quantite;
-	    $sql = "INSERT INTO panier (ID_numero_article,ID_article,Prix_panier,Quantite_panier) VALUES (NULL,'$ID', '$prix_final','$quantite')";
+    $prix_final=$prix*$quantite;
+        $sql = "INSERT INTO panier (ID_numero_article,ID_article,Prix_panier,Quantite_panier) VALUES (NULL,'$ID', '$prix_final','$quantite')";
 
         mysqli_query($connexion, $sql) or die('Erreur SQL !'.$sql.'<br>'.mysqli_error($connexion));
 
@@ -71,4 +71,4 @@ else
 mysqli_close($connexion);
 
 header('Location: http://localhost/Market-Place/Articles.php');
-			?>
+            ?>
