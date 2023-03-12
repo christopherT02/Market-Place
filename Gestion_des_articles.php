@@ -32,6 +32,7 @@
 			$trouve = mysqli_select_db($connexion,$Nom_base);
 			$requete = "SELECT * FROM article";
 			$resultat=mysqli_query($connexion, $requete);
+			
 			while ($data=mysqli_fetch_assoc($resultat)) {
 				echo "<tr>";?>
 				<td><img src=<?php echo $data['Image_1']?>> </td>

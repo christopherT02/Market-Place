@@ -5,7 +5,7 @@
 		
     	<center>
     		<br>
-			<h2>Listes des vendeurs</h2>
+			<h2>Gestion des vendeurs</h2>
 			<table border="2">
 				<div id= "Entete">
 				<tr>
@@ -33,14 +33,16 @@
 			$resultat=mysqli_query($connexion, $requete);
 			while ($data=mysqli_fetch_assoc($resultat)) {
 				echo "<tr>";?>
-				<td><img src=<?php echo $data['Image de fond']?>> </td>
+				<td><img src=<?php echo $data['Image_de_fond']?>> </td>
 			<?php
 				echo "<td>".$data['ID_vendeur']."</td>";
 				echo "<td>".$data['Nom']."</td>";
 				echo "<td>".$data['Prenom']."</td>";
 				echo "<td>".$data['Mail']."</td>";
-				echo "<td>".$data['Pseudo']."</td>";
-				echo "<br>";
+				echo "<td>".$data['Pseudo']."</td>";?>
+				<td><a href="Modifier_vendeur.php?ID=<?php echo $data['ID_vendeur']?>"> Modifier</a></td>
+				<td><a href="Supprimer_vendeur_admin.php?ID=<?php echo $data['ID_vendeur']?>"> Supprimer</a></td>
+				<?php
 				echo "</tr>";
 			}
 			?>

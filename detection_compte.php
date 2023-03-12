@@ -31,6 +31,7 @@ $mail_trouve=false;
       {
       	  	if($mail_recherche == $data['Mail'])
       	  	{
+              $_SESSION['Mail2'] = $data['Mail'];
       	  		if($mdp_recherche == $data['Mot_de_Passe'])
       	  		{
       	  			$mail_trouve=true;

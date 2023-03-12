@@ -31,8 +31,8 @@
 			$resultat=mysqli_query($connexion, $requete);
 			while ($data=mysqli_fetch_assoc($resultat)) {
 				echo "<tr>";?>
-				<td><img src=<?php echo $data['Image de fond']?>> </td>
-				<?php 
+				<td><img src=<?php echo $data['Image_de_fond']?>> </td>
+			<?php 
 				echo "<td>".$data['ID_vendeur']."</td>";
 				echo "<td>".$data['Nom']."</td>";
 				echo "<td>".$data['Prenom']."</td>";

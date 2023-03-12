@@ -21,7 +21,7 @@
 			<br>
 
 			<center>
-		<form action="Modifier.php" method="post">
+		<form action="Enregistrer.php" method="post">
 
 		<h3>Modifier un Article</h3>
 		<table border="1" align="center">
@@ -50,12 +50,8 @@
 			</tr>
 
 			<tr>
-				<td><a href="Enregistrer.php?ID=<?php echo $data['ID_article']?>& nom=<?php echo $data['Nom']?>&
-				prix=<?php echo $data['Prix']?>&
-				description=<?php echo $data['Description']?>&
-				rarete=<?php echo $data['Rarete']?>&
-				quantite=<?php echo $data['Quantite']?>
-				"> Modifier</a></td>
+				<td><input type="hidden" name="ID" value="<?php echo $data['ID_article']?>"></td>
+				<td><input type="submit" name="submit" value="Modifier"></td>
 			</tr>
 		</table>
 	</form>

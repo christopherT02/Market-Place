@@ -25,7 +25,7 @@
 						<a href="Gestion_des_articles"><button type="button" class="Bouton_de_navigation"> Gestion des Articles</button></a>
 						<a href="Listes_des_vendeurs.php"><button type="button" class="Bouton_de_navigation"> Listes des vendeurs</button></a>
 
-						<a href="Votre_Compte.php"><button type="button" class="Bouton_de_navigation" >Votre Compte</button></a>
+						<a href="Votre_Compte_vendeur.php"><button type="button" class="Bouton_de_navigation" >Votre Compte</button></a>
 
 					</div>
 				</nav>
